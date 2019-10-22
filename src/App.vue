@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Header from './components/header'
-import Left from './components/left'
-import Content from './components/content'
+import Header from './components/header/header'
+import Left from './components/left/left'
+import Content from './components/content/content'
 
 export default {
   name: 'App',
