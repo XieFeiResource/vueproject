@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
-  </div>
+  <el-container style="height: 500px; border: 1px solid #eee">
+      <Left></Left>
+    <el-container>
+        <Header></Header>
+        <Content></Content>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Header from './components/header'
+import Left from './components/left'
+import Content from './components/content'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {//局部声明组件
+    Header,
+    Left,
+    Content
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
