@@ -14,30 +14,33 @@
 </template>
 
 <script>
-  import {reqStuCourseMsg} from '../../api'
   export default {
+    props:['result'],
     data() {
       return {
-        StuCourseMsg:{}
+        // StuCourseMsg:this.sortArray(this.result)
       }
     },
-    async mounted() {
-      const result=await reqStuCourseMsg()
-      let tableData= new Array();
-      let k=0;
-      for(let i=0;i<result.length;i++){
-        let obj={}
-        let len=result[i].courses.length
-        for(let j=0;j<len;j++){
-          obj.stuName=result[i].stuName;
-          obj.stuAge=result[i].stuAge;
-          obj.course=result[i].courses[j].cname;
-          obj.cgrade=result[i].courses[j].cgrade;
-          tableData[k]=obj;
-          k++
+
+    computed: {
+      StuCourseMsg:function () {
+        let result=this.result;
+        let tableData= new Array();
+        let k=0;
+        for(let i=0;i<result.length;i++){
+          let obj={}
+          let len=result[i].courses.length
+          for(let j=0;j<len;j++){
+            obj.stuName=result[i].stuName;
+            obj.stuAge=result[i].stuAge;
+            obj.course=result[i].courses[j].cname;
+            obj.cgrade=result[i].courses[j].cgrade;
+            tableData[k]=obj;
+            k++
+          }
         }
+        return tableData;
       }
-      this.StuCourseMsg=tableData;
     }
 
   };
