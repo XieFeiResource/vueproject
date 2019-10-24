@@ -1,6 +1,6 @@
 <template>
   <el-main>
-    <el-table :data='StuCourseMsg'>
+    <el-table :data='StuCourseMsg'><!--slice((currentPage-1)*pagesize,currentPage*pagesize)-->
       <el-table-column prop="stuName" label="姓名" width="140">
       </el-table-column>
       <el-table-column prop="stuAge" label="年龄" width="140">
@@ -38,7 +38,7 @@
     },*/
     computed: {
       StuCourseMsg:function () {
-        debugger
+        // debugger
         let result=this.userList.records;
         let tableData= new Array();
         let k=0;
@@ -68,7 +68,7 @@
         console.log(this.currentPage)  //点击第几页
       }
     },
-    async mounted() {
+    async created() {
       const result = await reqStuCourseMsg(this.currentPage,this.pagesize)
       this.userList=result
     }
