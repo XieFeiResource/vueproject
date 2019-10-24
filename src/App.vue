@@ -3,7 +3,8 @@
       <Left></Left>
     <el-container direction="vertical">
         <Header></Header>
-        <Content :result="result"></Content>
+        <Content></Content>
+        <!--<Content :result="result"></Content>-->
         <!--<Content v-for="msg in StuCourseMsg" v-bind:key="msg.stuId" v-bind:msg="msg"></Content>-->
     </el-container>
   </el-container>
@@ -13,7 +14,8 @@
 import Header from './components/header/header'
 import Left from './components/left/left'
 import Content from './components/content/content'
-import {reqStuCourseMsg} from './api'
+
+// import {reqStuCourseMsg} from './api'
 export default {
   name: 'App',
   data(){
@@ -24,12 +26,12 @@ export default {
   components: {//局部声明组件
     Header,
     Left,
-    Content
+    Content,
   },
-  async mounted() {
+  /*async mounted() {
     const result = await reqStuCourseMsg()
     this.result=result
-  }
+  }*/
 }
 </script>
 
