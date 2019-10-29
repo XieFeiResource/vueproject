@@ -4,4 +4,4 @@
  */
 import ajax from './ajax'
 const BASE_URL = '/api'
-export const reqStuCourseMsg=(page,stuvo) => ajax(BASE_URL+'/stu/getStuAndCourseList',{page:page,stuvo:stuvo},'Post')
+export const reqStuCourseMsg=(currentPage,pageSize) => ajax(BASE_URL+'/stu/getStuAndCourseList',{currentPage:currentPage,pageSize:pageSize})
