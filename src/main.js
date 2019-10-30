@@ -12,6 +12,6 @@ Vue.use(ElementUI)
 
 new Vue({
   el: '#app',
-  render: h => h(App),
-  store
+  store,
+  render: h => h(App)
 });
